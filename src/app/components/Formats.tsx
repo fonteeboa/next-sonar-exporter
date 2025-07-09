@@ -65,7 +65,7 @@ const Formats: React.FC<any> = ({ selectedKeys, loading, handleExport, exportFor
       <EuiSpacer size="l" />
 
       <EuiFlexGroup gutterSize="l" direction={isMobile ? "column" : "row"} wrap responsive>
-        {cards.map(({ format, title, icon, description, badges }) => (
+        {cards.map(({ format, title, icon, badges }) => (
           <EuiFlexItem key={format}>
             <EuiCard
               icon={
