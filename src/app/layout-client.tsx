@@ -1,6 +1,5 @@
 "use client";
 
-import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider, useAppTheme } from "@/context/ThemeContext";
 import { EuiProvider } from "@elastic/eui";
 import { JetBrains_Mono } from "next/font/google";
