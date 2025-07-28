@@ -8,11 +8,13 @@ export type ColorMode = "light" | "dark";
 interface ThemeContextProps {
   colorMode: ColorMode;
   setColorMode: (mode: ColorMode) => void;
+  customTheme: EuiThemeModifications;
 }
 
 const ThemeContext = createContext<ThemeContextProps>({
   colorMode: "dark",
   setColorMode: () => {},
+  customTheme: {},
 });
 
 const customTheme: EuiThemeModifications = {
@@ -130,7 +132,7 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
     }
   }, [colorMode]);
 
-  const value = useMemo(() => ({ colorMode, setColorMode }), [colorMode]);
+  const value = useMemo(() => ({ colorMode, setColorMode, customTheme }), [colorMode]);
 
   return (
     <ThemeContext.Provider value={value}>
